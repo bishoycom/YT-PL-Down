@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Download Playlist",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/download.py",
+      "args": ["${input:playlistUrl}", "--outdir", "${workspaceFolder}/downloads", "--js-runtimes", "deno", "--remote-components", "ejs:github"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "playlistUrl",
+      "type": "promptString",
+      "description": "YouTube playlist URL to download",
+      "default": ""
+    }
+  ]
+}
