@@ -3,10 +3,15 @@
   "configurations": [
     {
       "name": "Download Playlist",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/download.py",
-      "args": ["${input:playlistUrl}", "--outdir", "${workspaceFolder}/downloads", "--js-runtimes", "deno", "--remote-components", "ejs:github"],
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "${input:playlistUrl}",
+        "--outdir",
+        "${workspaceFolder}/downloads"
+      ],
       "console": "integratedTerminal",
       "justMyCode": true
     }
