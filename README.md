@@ -43,6 +43,8 @@ Run `python download.py -h` for all options.
 
 - `yt-dlp` is recommended over `pytube` for reliability with playlists and newer YouTube changes.
 - If you plan to convert to MP3, ensure `ffmpeg` is installed and on your PATH.
+- The default video format is a compatible 360p MP4. Pass a custom `--format` selector if you need another quality.
+- If `aria2c` is installed, the downloader automatically uses eight connections per stream for faster, more resilient transfers.
 
 ### Installing ffmpeg (Windows) ✅
 
@@ -67,7 +69,8 @@ Get-ChildItem .\downloads -Filter *.mp4 | ForEach-Object {
 
 ### JS runtime / EJS challenges
 
-- Some YouTube videos require a JavaScript runtime and the EJS challenge solver to extract formats reliably. Install **Deno** and use the `--js-runtimes deno --remote-components ejs:github` flags when needed.
+- Some YouTube videos require a JavaScript runtime and the EJS challenge solver to extract formats reliably. Install **Deno**; the downloader enables Deno and the EJS component automatically.
+- Keep the dependencies current with `python -m pip install --upgrade -r requirements.txt` when YouTube extraction stops working.
 
 ---
 
